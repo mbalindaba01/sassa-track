@@ -1,38 +1,112 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Karla|Quicksand");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family:'Karla', sans-serif ;
+  width: 100vw;
+  height: 100vh;
+  background: #D6E6EB;
+  color: #eee;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header {
+  color: #111;
+  margin-left: 40px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form {
+  width: 35%;
   display: flex;
   flex-direction: column;
+  border: 1px solid black;
+  padding: 20px;
+  height: 200px;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: #19535F;
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+input {
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+  background: none;
+  height: 30px;
+  width: 100%;
+  padding: 5px;
+  color: #eee;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+::placeholder {
+  color: #ddd;
+}
+
+button {
+  width: 220px;
+  height: 30px;
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+}
+
+.outcome-card{
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.body-text {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.outcomes-container {
+  width: 55%;
+  border: 1px solid black;
+  padding: 20px;
+  background: #19535F;
+  border-radius: 5px;
+}
+
+
+
+.insights {
+  background: #9E2A2B;
+  position: absolute;
+  height: 50%;
+  top: 45%;
+  left: 40px;
+  width: 36%;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.insights-heading {
+  border-bottom:  1px solid black;
+  height: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.insights-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 88%;
+}
+
+.insights-section > * {
+  border-bottom: 1px solid black;
+  padding: 10px;
 }
