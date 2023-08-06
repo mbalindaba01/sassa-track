@@ -1,7 +1,7 @@
 import './App.css';
 import Outcome from './components/OutcomeCard';
 import Home from './pages/Home'
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 
 function App() {

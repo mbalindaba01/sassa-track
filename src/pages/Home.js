@@ -58,8 +58,11 @@ const Home = () => {
                     {formError && <p className="error">{formError}</p>}
                     
                 </form>
-                <div className="outcomes-container">
+                <div>
+                    
+                </div>
                 {outcomes && (
+                <div className="outcomes-container">
                     <div className="outcomes">
                         <h1>Outcomes</h1>
                         <div className="outcomes-grid">
@@ -68,12 +71,12 @@ const Home = () => {
                             ))}
                         </div>
                     </div>
-                )}
                 </div>
-                <InsightsCard />
+                )}
             </div>
-            
-     
+            {outcomes && 
+                <InsightsCard outcomes = {outcomes}/>
+            }
         </div>
     )
 }
