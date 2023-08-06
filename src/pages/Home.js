@@ -11,22 +11,55 @@ const Home = () => {
     const [id, setId] = useState('')
     const [mobile, setMobile] = useState('')
     const [formError, setFormError] = useState(null)
+    const [dataError, setDataError] = useState(null)
     const [outcomes, setOutcomes] = useState(null)
     let data = []
    
     const handleSubmit = (e) => {
+        setDataError(null)
         e.preventDefault()
         //return error if user does not provide the required id and mobile number
         if (!id || !mobile) {
             setFormError('Please fill in all the fields correctly.')
             return
+        }else {
+            getData()
         }
     }
 
     //function to fetch data when user clicks 
     const getData = async () => {
         data = await apiClient(id, mobile)
-        setOutcomes(data)
+        if(data.outcomes){
+            setDataError(null)
+            setFormError(null)
+            if(data.outcomes.length !== 0){
+                setOutcomes(data.outcomes)
+                sortOutcomes()
+            }else {
+                setDataError(data.status)
+            }
+        } else {
+            setDataError(data)
+            setOutcomes(null)
+        }
+    }
+
+    setTimeout(() => {
+        setDataError(null)
+        setFormError(null)
+    }, 3000);
+
+    //function to sort outcomes by month and year starting with the latest
+    const sortOutcomes = () => {
+        let months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+        data.outcomes.sort((a, b) => {
+            if(b.period.slice(3,) !== a.period.slice(3,)){
+                return b.period.slice(3,) - a.period.slice(3,)
+            }else {
+                return months.indexOf(b.period.slice(0,3)) - months.indexOf(a.period.slice(0,3))
+            }
+        })
     }
 
   
@@ -54,8 +87,9 @@ const Home = () => {
                     placeholder="Mobile Number"
                     onChange={(e) => setMobile(e.target.value)}
                     />
-                    <button onClick={getData}>Check Status</button>
+                    <button>Check Status</button>
                     {formError && <p className="error">{formError}</p>}
+                    {dataError && <p className="error">{dataError}</p>}
                     
                 </form>
                 <div>
