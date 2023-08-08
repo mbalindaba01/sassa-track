@@ -34,11 +34,10 @@ header {
 
 
 .insights {
-  background: #EFC3F5;
+  background: #8338EC;
   height: 260px;
   border-radius: 3px;
   padding: 20px;
-  color: #0F1020;
 }
 
 .form-and-insights {
@@ -79,6 +78,7 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  color: #eee;
 }
 
 .insights-section > * {
@@ -87,6 +87,7 @@ input {
 }
 
 .outcomes-container {
+  position: relative;
   width: 70%;
   background: #2F195F;
   padding: 20px;
@@ -112,9 +113,10 @@ input {
 button {
   height: 40px;
   width: 300px;
-  background: #EFC3F5;
+  background: #8338EC;
   border: none;
   border-radius: 3px;
   outline: none;
   font-size: 18px;
+  color: #eee;
 }
