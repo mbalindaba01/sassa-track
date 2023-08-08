@@ -21,6 +21,7 @@ const Home = () => {
         //return error if user does not provide the required id and mobile number
         if (!id || !mobile) {
             setFormError('Please fill in all the fields correctly.')
+            removeError(setFormError)
             return
         }else {
             getData()
@@ -38,17 +39,20 @@ const Home = () => {
                 sortOutcomes()
             }else {
                 setDataError(data.status)
+                removeError(setDataError)
             }
         } else {
             setDataError(data)
+            removeError(setDataError)
             setOutcomes(null)
         }
     }
-
-    setTimeout(() => {
-        setDataError(null)
-        setFormError(null)
-    }, 3000);
+    const removeError = (error) => {
+        setTimeout(() => {
+            error(null)
+        }, 3000);
+    }
+    
 
     //function to sort outcomes by month and year starting with the latest
     const sortOutcomes = () => {
@@ -69,31 +73,33 @@ const Home = () => {
                 <h1>Check Sassa Grant Status</h1>
             </header>
             <div className="body-text">
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="id"></label>
-                    <input 
-                    type="text" 
-                    id="id"
-                    value={id}
-                    placeholder="ID Number"
-                    onChange={(e) => setId(e.target.value)}
-                    />
+                <div className="form-and-insights">
+                    <form onSubmit={handleSubmit}>
+                        <label htmlFor="id"></label>
+                        <input 
+                        type="text" 
+                        id="id"
+                        value={id}
+                        placeholder="ID Number"
+                        onChange={(e) => setId(e.target.value)}
+                        />
 
-                    <label htmlFor="mobile"></label>
-                    <input
-                    type="text"
-                    id="mobile"
-                    value={mobile}
-                    placeholder="Mobile Number"
-                    onChange={(e) => setMobile(e.target.value)}
-                    />
-                    <button>Check Status</button>
-                    {formError && <p className="error">{formError}</p>}
-                    {dataError && <p className="error">{dataError}</p>}
-                    
-                </form>
-                <div>
-                    
+                        <label htmlFor="mobile"></label>
+                        <input
+                        type="text"
+                        id="mobile"
+                        value={mobile}
+                        placeholder="Mobile Number"
+                        onChange={(e) => setMobile(e.target.value)}
+                        />
+                        <button>Check Status</button>
+                        {formError && <p className="error">{formError}</p>}
+                        {dataError && <p className="error">{dataError}</p>}
+                        
+                    </form>
+                    {outcomes && 
+                    <InsightsCard outcomes = {outcomes}/>
+                    }
                 </div>
                 {outcomes && (
                 <div className="outcomes-container">
@@ -108,9 +114,6 @@ const Home = () => {
                 </div>
                 )}
             </div>
-            {outcomes && 
-                <InsightsCard outcomes = {outcomes}/>
-            }
         </div>
     )
 }

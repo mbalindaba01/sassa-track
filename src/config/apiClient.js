@@ -4,6 +4,7 @@ const trackSassaStatus = async (id, mobile) => {
         const response = await fetch(url)
         const json = await response.json()
         const res = json.messages ? json.messages[0] : json
+        console.log(res)
         return res
     }
     catch(error) {

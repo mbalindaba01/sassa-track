@@ -8,39 +8,101 @@
 
 body {
   font-family:'Karla', sans-serif ;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  background: #D6E6EB;
+  background: #0F1020;
   color: #eee;
+}
+
+.parent-div {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 
 header {
-  color: #111;
-  margin-left: 40px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.insights {
+  background: #EFC3F5;
+  height: 260px;
+  border-radius: 3px;
+  padding: 20px;
+  color: #0F1020;
+}
+
+.form-and-insights {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 530px;
+  height: 100%;
 }
 
 form {
-  width: 35%;
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
-  padding: 20px;
-  height: 200px;
+  width: 100%;
+  height: 250px;
   justify-content: space-evenly;
+  background: #2F195F;
+  padding: 20px;
   align-items: center;
-  background: #19535F;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 input {
-  border: 1px solid black;
-  border-radius: 5px;
-  outline: none;
-  background: none;
   height: 30px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid black;
   width: 100%;
-  padding: 5px;
   color: #eee;
+}
+
+.insights-heading {
+  font-size: 28px;
+}
+
+.insights-section {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.insights-section > * {
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
+.outcomes-container {
+  width: 70%;
+  background: #2F195F;
+  padding: 20px;
+  border-radius: 3px;
+}
+
+.outcome-card {
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+  padding: 5px;
+  background: #381E71;
+  border-radius: 3px;
+}
+
+.outcomes h1 {
+  padding-bottom: 15px;
 }
 
 ::placeholder {
@@ -48,65 +110,11 @@ input {
 }
 
 button {
-  width: 220px;
-  height: 30px;
-  border: 0;
-  outline: 0;
-  border-radius: 5px;
-}
-
-.outcome-card{
-  margin-bottom: 10px;
-  border-bottom: 1px solid black;
-  height: 30px;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  cursor: pointer;
-}
-
-.body-text {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-}
-
-.outcomes-container {
-  width: 55%;
-  border: 1px solid black;
-  padding: 20px;
-  background: #19535F;
-  border-radius: 5px;
-}
-
-
-
-.insights {
-  background: #9E2A2B;
-  position: absolute;
-  height: 50%;
-  top: 45%;
-  left: 40px;
-  width: 36%;
-  border-radius: 5px;
-  padding: 20px;
-}
-
-.insights-heading {
-  border-bottom:  1px solid black;
-  height: 20%;
-  display: flex;
-  align-items: center;
-}
-
-.insights-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 88%;
-}
-
-.insights-section > * {
-  border-bottom: 1px solid black;
-  padding: 10px;
+  height: 40px;
+  width: 300px;
+  background: #EFC3F5;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  font-size: 18px;
 }

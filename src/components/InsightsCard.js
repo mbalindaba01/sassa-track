@@ -24,7 +24,7 @@ const InsightsCard = ({ outcomes }) => {
 
     return (
         <div className="insights">
-            <h1 className="insights-heading">Insights</h1>
+           <h1 className="insights-heading">Insights</h1>
            <div className="insights-section">
                 <div className="total-section">
                     <p className="total">Total received: R{totalReceived}</p>
