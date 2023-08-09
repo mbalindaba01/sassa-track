@@ -8,6 +8,7 @@ const OutcomeCard = ({ outcome }) => {
 
   return (
     <div className="outcome-card">
+      {outcome &&
       <div className="header-info">
         <p className="period">{outcome.period}</p>
         {outcome.outcome === "approved" &&
@@ -41,6 +42,7 @@ const OutcomeCard = ({ outcome }) => {
             </>
           }
       </div>
+      }
     </div>
   )
 }
