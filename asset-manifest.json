@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/sassa-track/static/css/main.024e5878.css",
-    "main.js": "/sassa-track/static/js/main.fac5f613.js",
+    "main.js": "/sassa-track/static/js/main.c0420b2b.js",
     "static/js/787.befce39d.chunk.js": "/sassa-track/static/js/787.befce39d.chunk.js",
     "index.html": "/sassa-track/index.html",
     "main.024e5878.css.map": "/sassa-track/static/css/main.024e5878.css.map",
-    "main.fac5f613.js.map": "/sassa-track/static/js/main.fac5f613.js.map",
+    "main.c0420b2b.js.map": "/sassa-track/static/js/main.c0420b2b.js.map",
     "787.befce39d.chunk.js.map": "/sassa-track/static/js/787.befce39d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.024e5878.css",
-    "static/js/main.fac5f613.js"
+    "static/js/main.c0420b2b.js"
   ]
 }
