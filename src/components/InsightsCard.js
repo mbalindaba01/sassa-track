@@ -4,11 +4,11 @@ const InsightsCard = ({ outcomes }) => {
     let totalRejections = 0
     let latestOutcome = {}
 
-    const calculateTotal = () => {
+    const calculateTotals = () => {
         outcomes.forEach(outcome => {
             if(outcome.outcome === "approved"){
                 totalReceived += 350
-            }else {
+            }else if(outcome.outcome === "declined") {
                 totalRejections++
             }
         })
@@ -19,7 +19,7 @@ const InsightsCard = ({ outcomes }) => {
         console.log(latestOutcome)
     }
 
-    calculateTotal()
+    calculateTotals()
     getLatestOutcome()
 
     return (

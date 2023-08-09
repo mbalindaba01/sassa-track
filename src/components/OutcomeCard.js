@@ -34,6 +34,12 @@ const OutcomeCard = ({ outcome }) => {
           <p>Reason: {outcome.reason}</p>
           </>
         }
+
+          {outcome.outcome === "pending" && 
+            <>
+              <p>Status: Pending</p>
+            </>
+          }
       </div>
     </div>
   )
